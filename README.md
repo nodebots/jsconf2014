@@ -56,4 +56,16 @@ Didn't work? Things to check:
 
 * Is the light on the spark core slowly fading on and off (breathing) in cyan? If not something went wrong at the connection stage. Try the `spark setup` step again.
 
+* Do you have a servo that's not turning? Make sure it's plugged in to one of the PWM pins - A0, A1, D0 and D1.
+
+* If the spark core is blinking green for a really long time during the WiFi connection phase, it's possible that the WiFi network is saturated and the spark can't connect. Try a different WiFi network, or wait a little while. 
+
+* If your spark is not connecting to the node program, it's possible the firmware flash didn't take. You can debug this with curl command:
+
+```
+curl -m 3 "https://api.spark.io/v1/devices/{YOUR_CORE_ID}/endpoint?access_token={YOUR_TOKEN}"
+```
+
+* ..if it was a success, you should see a JSON document returned with the local IP address of your spark. You can ping this address to further debug. If you can hit it, the problem might be with your node script!
+
 
