@@ -60,6 +60,8 @@ board.on("ready", function() {
   led.blink();
 });
 ```
+![spark_button_led.jpg](spark_button_led.jpg)
+Fritzing Diagram [spark_button_led.fzz](spark_button_led.fzz)
 
 Did it work? Awesome! You can find more examples on how to use things like [Servo Motors](https://github.com/rwaldron/johnny-five/wiki/Servo) at the [Johnny-Five Docs](https://github.com/rwaldron/johnny-five/wiki). Remember that servos can only be used on PWM pins - on Spark, this means: A0, A1, D0, D1.
 
