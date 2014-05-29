@@ -32,9 +32,9 @@ Follow the directions. Take note of your token and core id and save it for later
 It will ask you for WiFi information, so enter the following
 
 ```
-SSID: ??????
+SSID jsconf2014
 Security: WPA2
-Wifi Password: ??????
+Wifi Password: OMGJSConf
 ```
 
 * Next, in order for spark to be able to talk to node, you should flash it with the [voodoospark](https://github.com/voodootikigod/voodoospark) firmware.
