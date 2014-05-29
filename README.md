@@ -80,3 +80,34 @@ curl -m 3 "https://api.spark.io/v1/devices/{YOUR_CORE_ID}/endpoint?access_token=
 * ..if it was a success, you should see a JSON document returned with the local IP address of your spark. You can ping this address to further debug. If you can hit it, the problem might be with your node script!
 
 
+**_Take it to the next level_**
+
+Hook up a button into the mix! Follow [this diagram](https://github.com/rwaldron/johnny-five/blob/master/docs/breadboard/button.png) (but substitute the Arduino for the Spark core :-)). 
+
+Here's the code: 
+
+```
+var five = require("johnny-five");
+var Spark = require("spark-io");
+var board = new five.Board({
+  io: new Spark({
+    token: 'YOUR_TOKEN',
+    deviceId: 'YOUR_CORE_ID'
+  })
+});
+
+var button, led;
+
+board.on("ready", function() { 
+  button = new five.Button(8);
+  led = new five.Led(13); 
+  
+  button.on("down", function() {
+    led.on();
+  });
+  
+  button.on("up", function() { 
+    led.off(); 
+  }); 
+});
+```
