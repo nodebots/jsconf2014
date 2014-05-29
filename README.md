@@ -1,5 +1,16 @@
 ## Welcome to JSConf 2014!
 
+### What are we doing today?
+
+Nodebots has [soccer bots](https://www.youtube.com/watch?v=CcCwjnWBoJ8&feature=youtu.be) and anything you wants bots today.
+
+
+### Parts
+Parts are in the parts library. We all have to share. Please return what you are no longer using. And we'll all have to return everything (besides your sparkcore inventors kit) at the end of the day.
+
+
+### Getting started
+
 How do I get started with with [Node](http://nodejs.org/) on [Spark](https://www.spark.io/)?
 
 If you don't have [node.js](http://nodejs.org/), download the [installer](http://nodejs.org/) for your platform, and run it!
