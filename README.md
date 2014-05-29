@@ -39,7 +39,7 @@ Wifi Password: OMGJSConf
 
 * Next, in order for spark to be able to talk to node, you should flash it with the [voodoospark](https://github.com/voodootikigod/voodoospark) firmware.
 
-```spark cloud flash YOUR_CORE_ID voodoospark.cpp```
+```spark cloud flash YOUR_CORE_ID voodoo```
 
 If that succeeded, you are now ready to talk to your spark via node!
 
