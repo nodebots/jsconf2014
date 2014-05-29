@@ -69,7 +69,7 @@ Didn't work? Things to check:
 
 * Do you have a servo that's not turning? Make sure it's plugged in to one of the PWM pins - A0, A1, D0 and D1.
 
-* If the spark core is blinking green for a really long time during the WiFi connection phase, it's possible that the WiFi network is saturated and the spark can't connect. Try a different WiFi network, or wait a little while. 
+* If the spark core is blinking green for a really long time during the WiFi connection phase, it's possible that the WiFi network is saturated and the spark can't connect. Try a different WiFi network, or wait a little while.
 
 * If your spark is not connecting to the node program, it's possible the firmware flash didn't take. You can debug this with curl command:
 
@@ -79,4 +79,29 @@ curl -m 3 "https://api.spark.io/v1/devices/{YOUR_CORE_ID}/endpoint?access_token=
 
 * ..if it was a success, you should see a JSON document returned with the local IP address of your spark. You can ping this address to further debug. If you can hit it, the problem might be with your node script!
 
+## Troubleshooting wifi
 
+If your core is not connecting to the wifi, you've power cycled, and it will ony blink green (never gets to breathing cyan), try the following steps:
+
+Install dfu-util ( I used homebrew ):
+```
+brew install dfu-util
+```
+
+hold both the rst and mode buttons on your core, release the rst (If your USB cable is on top, this is the button on the right) button until light flashes yellow (greenish)
+
+run the following:
+
+```
+spark flash —usb cc3000
+```
+
+the light on your sparkcore will flash purple, wait until it flashes yellow (greenish) again
+
+Then run
+
+```
+spark flash —usb tinker
+```
+
+And wait until it flashes blue. Then run `spark setup` again.
