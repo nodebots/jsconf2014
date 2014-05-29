@@ -69,7 +69,7 @@ Didn't work? Things to check:
 
 * Do you have a servo that's not turning? Make sure it's plugged in to one of the PWM pins - A0, A1, D0 and D1.
 
-* If the spark core is blinking green for a really long time during the WiFi connection phase, it's possible that the WiFi network is saturated and the spark can't connect. Try a different WiFi network, or wait a little while. 
+* If the spark core is blinking green for a really long time during the WiFi connection phase, it's possible that the WiFi network is saturated and the spark can't connect. Try a different WiFi network, or wait a little while.
 
 * If your spark is not connecting to the node program, it's possible the firmware flash didn't take. You can debug this with curl command:
 
@@ -82,9 +82,9 @@ curl -m 3 "https://api.spark.io/v1/devices/{YOUR_CORE_ID}/endpoint?access_token=
 
 **_Take it to the next level_**
 
-Hook up a button into the mix! Follow [this diagram](https://github.com/rwaldron/johnny-five/blob/master/docs/breadboard/button.png) (but substitute the Arduino for the Spark core :-)). 
+Hook up a button into the mix! Follow [this diagram](https://github.com/rwaldron/johnny-five/blob/master/docs/breadboard/button.png) (but substitute the Arduino for the Spark core :-)).
 
-Here's the code: 
+Here's the code:
 
 ```
 var five = require("johnny-five");
@@ -98,16 +98,16 @@ var board = new five.Board({
 
 var button, led;
 
-board.on("ready", function() { 
-  button = new five.Button(8);
-  led = new five.Led(13); 
-  
+board.on("ready", function() {
+  button = new five.Button('D1');
+  led = new five.Led('D7'); 
+
   button.on("down", function() {
     led.on();
   });
-  
-  button.on("up", function() { 
-    led.off(); 
-  }); 
+
+  button.on("up", function() {
+    led.off();
+  });
 });
 ```
